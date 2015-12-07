@@ -12,8 +12,8 @@
             ['b', '%s contains %s?', 'contains', 'hello world', 'hello'],
             ['r', 'letters %n to %n of %s', 'xToZ', 1, 5, 'hello world'],
             ['b', 'case sensitive %s = %s?', 'caseSense', 'A', 'a'],
-            //['c', 'code section | %s', 'codeSection', 'code'], (C-blocks dont work right now :/)
-   	        [' ', 'prompt %s with default value %s', 'prompt', "What's your name?"],
+            ['c', 'code section | %s', 'codeSection', 'code'],
+   	    [' ', 'prompt %s with default value %s', 'prompt', "What's your name?"],
             ['r', 'prompt answer', 'promptAnswerBlock'],
             ['r', '%s in %m.lowerUpperCase', 'lowerUpperCase', 'scratch cat', 'all uppercase'],
             ['r', '%n / %n of %n', 'mathThing', 1, 2, 10],
@@ -42,7 +42,7 @@
     ext.xToZ = function(start,end,string) {
         return(string.substring(start-1,end));
     };
-    //ext.codeSection = function() {}
+    ext.codeSection = function() { return 1; }
     ext.prompt = function(string, defaultValue) {
 	promptAnswer = prompt(string,defaultValue);
     };
