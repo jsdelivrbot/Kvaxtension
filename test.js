@@ -17,11 +17,8 @@
     blocks: [], menus: {}
   };
 
-  var addBlock = function(type, name, func) {
-    var blockLength = descriptor.blocks.length;
-    var blockName = 'function_' + blockLength;
-    ext[blockName] = function() { func() }
-    descriptor.blocks.push(type, name, blockName);
+  var addBlock = function(block) {
+    descriptor.blocks.push(block);
   }
 
   var refresh = function(ext) {
@@ -29,9 +26,9 @@
     ScratchExtensions.register('kvaxtension: Test...', descriptor, ext);
   }
 
-  addBlock('R', 'test!', function() {
-    return 'Test!';
-  })
-  
+  addBlock(['R', 'test!', 'test'])
+  ext.test = function() {
+    return 'Test';
+  }
   ext.refresh();
 })({});
