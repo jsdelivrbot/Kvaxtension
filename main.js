@@ -121,5 +121,5 @@
     ext.color = function(color) {
     	return(color);
     }
-    ScratchExtensions.register("Kvaxtension", descriptor, ext);
+    ScratchExtensions.register("General Blocks | kvaxtension", descriptor, ext);
 })({});
