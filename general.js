@@ -12,7 +12,7 @@
             ['b', '%s contains %s?', 'contains', 'hello world', 'hello'],
             ['r', 'letters %n to %n of %s', 'xToZ', 1, 5, 'hello world'],
             ['b', 'case sensitive %s = %s?', 'caseSense', 'A', 'a'],
-            ['c', 'code section | %s', 'codeSection', 'code'],
+            //['c', 'code section | %s', 'codeSection', 'code'], C-blocks don't work.
    	    [' ', 'prompt %s with default value %s', 'prompt', "What's your name?"],
             ['r', 'prompt answer', 'promptAnswerBlock'],
             ['r', '%s in %m.lowerUpperCase', 'lowerUpperCase', 'scratch cat', 'all uppercase'],
@@ -121,5 +121,5 @@
     ext.color = function(color) {
     	return(color);
     }
-    ScratchExtensions.register("General Blocks | kvaxtension", descriptor, ext);
+    ScratchExtensions.register("kvaxtension: General", descriptor, ext);
 })({});
