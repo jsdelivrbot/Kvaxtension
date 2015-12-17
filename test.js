@@ -1,4 +1,5 @@
 (function(ext) {
+  ext.name = 'kvaxtension: Test...'
   ext._shutdown = function() {
   };
   ext._getStatus = function() {
@@ -7,6 +8,10 @@
   ext.installed = function() {
   	return(true);
   };
+  ext.refresh = function() {
+    ScratchExtensions.unregister(ext.name);
+    ScratchExtensions.register(ext.name, descriptor, ext);
+  }
 
   var descriptor = {
     blocks: [], menus: {}
@@ -16,7 +21,7 @@
     descriptor.blocks.push(block);
   }
 
-  var refreshExt = function() {
+  var refresh = function(ext) {
     ScratchExtensions.unregister('kvaxtension: Test...');
     ScratchExtensions.register('kvaxtension: Test...', descriptor, ext);
   }
@@ -25,5 +30,5 @@
   var test = function() {
     return 'test!'
   }
-  refreshExt();
+  ext.refresh();
 })({});
